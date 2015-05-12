@@ -113,6 +113,7 @@ private:
   tcp::acceptor acceptor_;
 };
 
+//Add shared ptr and list for multi
 typedef boost::shared_ptr<server> server_ptr;
 typedef std::list<server_ptr> server_list;
 
@@ -129,6 +130,7 @@ int main(int argc, char* argv[])
     boost::asio::io_service io_service;
     server_list servers;
 
+    //Loop through add instances to list
     for(int i = 1; i < argc; ++i)
       {
 	using namespace std; // For atoi.
